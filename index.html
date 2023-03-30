@@ -5,24 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VUE-TODOLIST</title>
-    <link rel="stylesheet" href="CSS/script.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <h1 class="title-list">LA MIA LISTA DI BUONI PROPOSITI</h1>
-    <div class="container">
-      <div class="input">
-        <label for="todo">INSERISCI UN BUON PROPOSITO</label>
-        <input type="text" id="todo" placeholder="Aggiungi" />
-        <button class="btn">Invia</button>
-      </div>
-      <div class="cont-list">
-        <ul class="list">
-          <li>Perdere peso</li>
-          <li>Smettere di fumare</li>
-          <li>Iscrivermi a Boolean</li>
-          <li>Fare più sport</li>
-        </ul>
+    <div id="app">
+      <h1 class="title-list">LA MIA LISTA DI BUONI PROPOSITI</h1>
+      <div class="container">
+        <div class="input">
+          <label for="todo">INSERISCI UN BUON PROPOSITO</label>
+          <input type="text" id="todo" placeholder="Aggiungi" />
+          <button class="btn">Invia</button>
+        </div>
+        <div class="cont-list">
+          <ul class="list">
+            <li
+              v-for="(todo, index) in todos"
+              :key="index"
+              :class="todo.done ? 'line-through' : '' "
+            >
+              {{todo.text}}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <script src="JS/script.js"></script>
