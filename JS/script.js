@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      modelInput: "",
       todos: [
         {
           text: "Perdere peso",
@@ -23,5 +24,13 @@ createApp({
       ],
     };
   },
-  methods: {},
+  methods: {
+    addTodo() {
+      this.todos.push({
+        text: this.modelInput,
+        done: false,
+      });
+      this.modelInput = "";
+    },
+  },
 }).mount("#app");

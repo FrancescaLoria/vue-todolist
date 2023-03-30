@@ -14,8 +14,13 @@
       <div class="container">
         <div class="input">
           <label for="todo">INSERISCI UN BUON PROPOSITO</label>
-          <input type="text" id="todo" placeholder="Aggiungi" />
-          <button class="btn">Invia</button>
+          <input
+            type="text"
+            id="todo"
+            placeholder="Aggiungi"
+            v-model="modelInput"
+          />
+          <button class="btn" @click="addTodo">Invia</button>
         </div>
         <div class="cont-list">
           <ul class="list">
